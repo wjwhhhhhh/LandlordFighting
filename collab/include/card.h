@@ -33,13 +33,14 @@ public:
         Card_Sj,
         Card_BJ,
     };
-    CardPoint getCardPontByInt(int val);
+    CardPoint getCardPointByInt(int val);
     Card();
     CardPoint getPoint();
     CardSuit getSuit();
     void setPoint(CardPoint point);
     void setSuit( CardSuit suit);
     void setPointAndSuit(int val);
+    int getIntByPointAndSuit();
 private:
     CardPoint m_point;
     CardSuit m_suit;

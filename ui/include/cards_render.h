@@ -8,20 +8,21 @@ namespace Eula
 class CardPanel : public QWidget
 {
     Q_OBJECT
-public:
+  public:
     explicit CardPanel(QWidget *parent = nullptr);
 
-   void setImage(QPixmap &front,QPixmap &back);
+    void setImage(QPixmap &front, QPixmap &back);
     QPixmap getImage();
-   void setIsFront();
+    void setIsFront(bool value);
     bool getIsFront();
-signals:
-protected:
+  signals:
+  protected:
     void paintEvent(QPaintEvent *event) override;
-private:
-    QPixmap m_front,m_back;
-    bool m_isFront; //是不是正面
+
+  private:
+    QPixmap m_front, m_back;
+    bool m_isFront; // 是不是正面
 };
 
-}
+} // namespace Eula
 #endif // CARDS_RENDER_H

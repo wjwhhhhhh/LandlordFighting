@@ -1,1 +1,6 @@
-<RCC/>
+<RCC>
+    <qresource prefix="/image/cards">
+        <file>R-C.jpg</file>
+    </qresource>
+    <qresource prefix="/imges"/>
+</RCC>
