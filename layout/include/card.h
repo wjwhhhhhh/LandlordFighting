@@ -1,17 +1,17 @@
 #ifndef CARD_H
 #define CARD_H
-namespace collab
+namespace layout
 {
 class Card
 {
-public:
-    //花色
+  public:
+    // 花色
     enum CardSuit
     {
-        Hearts,//红心
-        Diamond,//方块
-        Club,//梅花
-        Spade,//黑桃
+        Hearts,  // 红心
+        Diamond, // 方块
+        Club,    // 梅花
+        Spade,   // 黑桃
     };
 
     CardSuit getCardSuitByInt(int val);
@@ -38,12 +38,12 @@ public:
     CardPoint getPoint();
     CardSuit getSuit();
     void setPoint(CardPoint point);
-    void setSuit( CardSuit suit);
+    void setSuit(CardSuit suit);
     void setPointAndSuit(int val);
     int getIntByPointAndSuit();
-private:
+  private:
     CardPoint m_point;
     CardSuit m_suit;
 };
-}
+} // namespace layout
 #endif // CARD_H
