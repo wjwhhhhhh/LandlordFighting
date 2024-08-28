@@ -24,16 +24,15 @@ class ImageManage
     {
         return "ImageManager";
     }
-
-  private:
+    const QPixmap& getBackground();
     void init();
+  private:
     void loadCard();
     void loadPlayer();
     void loadBackground();
-    std::vector<QPixmap> card_images_;
+    std::vector<QPixmap> card_images_;// 一副牌54张
     std::vector<QPixmap> player_images_;
     std::vector<QPixmap> background_images_;
 };
-const std::shared_ptr<ImageManage> imageManage = ImageManage::defaultImageManage();
 } // namespace layout
 #endif // IMAGE_MANAGE_H

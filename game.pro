@@ -11,13 +11,13 @@ SOURCES += \
     $$files(collab/src/**)   \
     $$files(layout/src/**) \
     $$files(ui/src/**)  \
-    main.cpp \
-    ui/src/screen.cpp
+    main.cpp
 
 HEADERS +=  \
     $$files(collab/include/**) \
     $$files(layout/include/**) \
     $$files(ui/include/**) \
+    layout/include/config.h
 
 FORMS += \
     gamepanel.ui

@@ -15,5 +15,4 @@ class DataManager
     DataManager();
     ~DataManager();
 };
-const std::shared_ptr<DataManager> dataManager = DataManager::defaultDataManager();
 }; // namespace collab
