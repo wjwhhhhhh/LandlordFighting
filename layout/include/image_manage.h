@@ -3,6 +3,7 @@
 #include <Qpixmap>
 #include <memory>
 #include <vector>
+#include "card.h"
 namespace layout
 {
 class ImageManage
@@ -25,12 +26,14 @@ class ImageManage
         return "ImageManager";
     }
     const QPixmap& getBackground();
+     const QPixmap& getCardByInt(int32_t);
+    const QPixmap& getCardByCard(const Card& card);
     void init();
   private:
     void loadCard();
     void loadPlayer();
     void loadBackground();
-    std::vector<QPixmap> card_images_;// 一副牌54张
+    std::vector<QPixmap> card_images_;// 一副牌54张，55张为背面
     std::vector<QPixmap> player_images_;
     std::vector<QPixmap> background_images_;
 };

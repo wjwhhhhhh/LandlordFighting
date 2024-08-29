@@ -2,7 +2,6 @@
 #define SCREEN_H
 
 #include <QWidget>
-#include <QLabel>
 #include <QPixmap>
 #include "layout/include/image_manage.h"
 
@@ -18,10 +17,7 @@ public:
     void paintEvent(QPaintEvent*)override;
 private:
     void init();
-    void resizeEvent(QResizeEvent * )override;
-    void setBackground(const QPixmap& background);
 
-    QLabel background_;
 };
 }
 #endif // SCREEN_H

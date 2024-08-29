@@ -1,5 +1,6 @@
 #ifndef CARD_H
 #define CARD_H
+#include <cstdint>
 namespace layout
 {
 class Card
@@ -12,9 +13,14 @@ class Card
         Diamond, // 方块
         Club,    // 梅花
         Spade,   // 黑桃
+        Small_Kind,//小王
+        Big_Kind
     };
 
-    CardSuit getCardSuitByInt(int val);
+    CardSuit getCardSuitByInt(int val)
+    {
+        return static_cast<CardSuit>(val);
+    }
     enum CardPoint
     {
         Card_3,
@@ -30,20 +36,46 @@ class Card
         Card_K,
         Card_A,
         Card_2,
-        Card_Sj,
-        Card_BJ,
     };
-    CardPoint getCardPointByInt(int val);
-    Card();
-    CardPoint getPoint();
-    CardSuit getSuit();
-    void setPoint(CardPoint point);
-    void setSuit(CardSuit suit);
-    void setPointAndSuit(int val);
-    int getIntByPointAndSuit();
+    CardPoint getCardPointByInt(int val)
+    {
+         return static_cast<CardPoint>(val);
+    }
+    void setPoint(int32_t point)
+    {
+        point_=point;
+    }
+    int32_t getPoint()const
+    {
+        return point_;
+    }
+    bool operator <(const Card &other)const
+    {
+        if(point_>=52||other.point_>=52)return point_<other.point_;
+        return point_/4<other.point_/4;
+
+    }
+    bool operator ==(const Card &other)const
+    {
+        if(*this<other)return false;
+        return point_/4==other.point_/4;
+
+    }
+    bool operator !=(const Card &other)const
+    {
+        return !(*this==other);
+
+    }
+    bool operator >(const Card &other)
+    {
+        return !(*this<other||*this==other);
+    }
+    static bool UsedBy(const Card&a,const Card&b)
+    {
+        return a.point_<b.point_;
+    }
   private:
-    CardPoint m_point;
-    CardSuit m_suit;
+    int32_t point_;
 };
 } // namespace layout
 #endif // CARD_H
