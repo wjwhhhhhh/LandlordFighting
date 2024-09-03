@@ -41,6 +41,10 @@ class Card
     {
          return static_cast<CardPoint>(val);
     }
+    Card(int32_t point)
+    {
+        setPoint(point);
+    }
     void setPoint(int32_t point)
     {
         point_=point;
@@ -73,6 +77,11 @@ class Card
     static bool UsedBy(const Card&a,const Card&b)
     {
         return a.point_<b.point_;
+    }
+    int32_t getValue()
+    {
+        if(point_>=52)return point;
+        return point/4;
     }
   private:
     int32_t point_;

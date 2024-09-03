@@ -3,7 +3,7 @@
 #include <Qpixmap>
 #include <memory>
 #include <vector>
-#include "card.h"
+#include "cardType/card.h"
 namespace layout
 {
 class ImageManage
