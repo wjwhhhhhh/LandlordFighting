@@ -1,7 +1,8 @@
 #ifndef LISTEN_H
 #define LISTEN_H
 #include "card.h"
-#include <memory.h>
+#include "card_group.h"
+#include <memory>
 #include <vector>
 namespace layout
 {

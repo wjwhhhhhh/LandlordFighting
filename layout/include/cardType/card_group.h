@@ -1,57 +1,61 @@
 #ifndef CARD_GROUP_H
 #define CARD_GROUP_H
-#include <vector>
 #include "card.h"
-namespace  layout
+#include <vector>
+namespace layout
 {
-    class CardGroup
+class CardGroup
+{
+  public:
+    enum type
     {
-    public:
-        enum type
-        {
-            normal,//正常
-            sequences,// 顺子
-            bomb,//炸弹
-        };
-    private:
-    protected:
-        type group_card_;
-
+        normal,    // 正常
+        sequences, // 顺子
+        bomb,      // 炸弹
     };
 
-    class NormalGroup:public CardGroup
-    {
-    public:
-        NormalGroup(){
-            group_card_=type::normal;
-        }
-        ~NormalGroup(){};
-    private:
-        std::vector<Card> master_;// 主牌
-        std::vector<Card>slave_;//带的
-    };
+  private:
+  protected:
+    type group_card_;
+};
 
-    class SequencesGroup: public CardGroup
+class NormalGroup : public CardGroup
+{
+  public:
+    NormalGroup()
     {
-    public:
-        SequencesGroup(){
-            group_card_=type::sequences;
-        }
-        ~SequencesGroup(){};
-    private:
-        std::vector<NormalGroup> master_;
-    };
+        group_card_ = type::normal;
+    }
+    ~NormalGroup() {};
+    std::vector<Card> master_; // 主牌
+    std::vector<Card> slave_;  // 带的
+  private:
+};
 
-
-    class Bomb:public CardGroup
+class SequencesGroup : public CardGroup
+{
+  public:
+    SequencesGroup()
     {
-    public:
-        Bomb(){
-            group_card_=type::bomb;
-        }
-        ~Bomb(){};
-    private:
-        std::vector<Card>cards_;
-    };
-}
+        group_card_ = type::sequences;
+    }
+    ~SequencesGroup() {};
+    std::vector<NormalGroup> master_;
+
+  private:
+};
+
+class BombGroup : public CardGroup
+{
+  public:
+    BombGroup()
+    {
+        group_card_ = type::bomb;
+    }
+    ~BombGroup() {};
+    std::vector<Card> cards_;
+
+  private:
+};
+} // namespace layout
 #endif // CARD_GROUP_H

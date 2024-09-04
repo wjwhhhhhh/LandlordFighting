@@ -23,6 +23,7 @@ bool BombCard::shouldResponse(const std::vector<Card> &cards)
 }
 std::shared_ptr<CardGroup> BombCard::deal(const std::vector<Card> &cards)
 {
-    return nullptr;
+    std::shared_ptr<BombGroup> group = std::make_shared<BombGroup>();
+    group->cards_.insert(group->cards_.end(), cards.begin(), cards.end());
 }
 }; // namespace layout

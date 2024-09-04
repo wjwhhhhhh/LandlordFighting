@@ -1,5 +1,6 @@
 #pragma once
 #include "layout/include/cardType/card.h"
+#include "layout/include/player.h"
 #include <memory>
 #include <vector>
 namespace layout
@@ -14,10 +15,12 @@ class GameManager
         static std::shared_ptr<GameManager> manager = std::make_shared<GameManager>();
         return manager;
     }
+    void startGame();
     void washCard();
     void sentCard(int index, const std::vector<Card> &cards);
 
   private:
+    std::vector <
 };
 const std::shared_ptr<GameManager> gameManager = GameManager::defaultGameManager();
 }; // namespace layout

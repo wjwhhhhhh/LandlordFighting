@@ -39,7 +39,7 @@ std::tuple<bool, int32_t> check(const std::vector<Card> &cards)
         return {false, -1};
     if (first.size() < config.min_sequences[second[0] - 1])
         return {false, -1};
-    return {true, first[0]};
+    return {true, first[0]}; // TODO  bug
 }
 bool SequencesCard::shouldResponse(const std::vector<int32_t> &cards)
 {
