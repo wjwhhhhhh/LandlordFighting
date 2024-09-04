@@ -9,11 +9,11 @@ class Card
     // 花色
     enum CardSuit
     {
-        Hearts,  // 红心
-        Diamond, // 方块
-        Club,    // 梅花
-        Spade,   // 黑桃
-        Small_Kind,//小王
+        Hearts,     // 红心
+        Diamond,    // 方块
+        Club,       // 梅花
+        Spade,      // 黑桃
+        Small_Kind, // 小王
         Big_Kind
     };
 
@@ -39,7 +39,7 @@ class Card
     };
     CardPoint getCardPointByInt(int val)
     {
-         return static_cast<CardPoint>(val);
+        return static_cast<CardPoint>(val);
     }
     Card(int32_t point)
     {
@@ -47,42 +47,43 @@ class Card
     }
     void setPoint(int32_t point)
     {
-        point_=point;
+        point_ = point;
     }
-    int32_t getPoint()const
+    int32_t getPoint() const
     {
         return point_;
     }
-    bool operator <(const Card &other)const
+    bool operator<(const Card &other) const
     {
-        if(point_>=52||other.point_>=52)return point_<other.point_;
-        return point_/4<other.point_/4;
+        if (point_ >= 52 || other.point_ >= 52)
+            return point_ < other.point_;
+        return point_ / 4 < other.point_ / 4;
+    }
+    bool operator==(const Card &other) const
+    {
+        if (*this < other)
+            return false;
+        return point_ / 4 == other.point_ / 4;
+    }
+    bool operator!=(const Card &other) const
+    {
+        return !(*this == other);
+    }
+    bool operator>(const Card &other)
+    {
+        return !(*this < other || *this == other);
+    }
+    static bool UsedBy(const Card &a, const Card &b)
+    {
+        return a.point_ < b.point_;
+    }
+    int32_t getValue() const
+    {
+        if (point_ >= 52)
+            return point_;
+        return point_ / 4;
+    }
 
-    }
-    bool operator ==(const Card &other)const
-    {
-        if(*this<other)return false;
-        return point_/4==other.point_/4;
-
-    }
-    bool operator !=(const Card &other)const
-    {
-        return !(*this==other);
-
-    }
-    bool operator >(const Card &other)
-    {
-        return !(*this<other||*this==other);
-    }
-    static bool UsedBy(const Card&a,const Card&b)
-    {
-        return a.point_<b.point_;
-    }
-    int32_t getValue()
-    {
-        if(point_>=52)return point;
-        return point/4;
-    }
   private:
     int32_t point_;
 };

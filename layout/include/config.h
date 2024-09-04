@@ -1,15 +1,16 @@
 #ifndef CONFIG_H
 #define CONFIG_H
-namespace laypout
+#include <cstdint>
+#include <vector>
+namespace layout
 {
-    class Config
-    {
-    public:
-        int min_one_sequences=5;
-        int min_two_sequences=3;
-        int min_three_sequences=2;
-    };
-    const Config config;
+class Config
+{
+  public:
+    std::vector<int32_t> min_with = {0, 0, 2, 3};
+    std::vector<int32_t> min_sequences = {5, 3, 2};
+};
+const Config config;
 
-}
+} // namespace layout
 #endif // CONFIG_H
