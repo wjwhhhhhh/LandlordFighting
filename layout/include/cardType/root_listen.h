@@ -9,7 +9,9 @@ class RootListen
     {
         init();
     }
-    ~RootListen();
+    ~RootListen()
+    {
+    }
     static std::shared_ptr<RootListen> defaultRootListen()
     {
         std::shared_ptr<RootListen> manager = std::make_shared<RootListen>();

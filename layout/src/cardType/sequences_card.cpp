@@ -1,21 +1,21 @@
 #include "layout/include/cardType/sequences_card.h"
-#include "config.h"
+#include "layout/include/config.h"
 #include <map>
 namespace layout
 {
-std::shared_ptr<CardGroup> dealOne(const std::vector<Card> &cards)
+std::shared_ptr<CardGroup> SequencesCard::dealOne(const std::vector<Card> &cards)
 {
     return nullptr;
 }
-std::shared_ptr<CardGroup> dealTwo(const std::vector<Card> &cards)
+std::shared_ptr<CardGroup> SequencesCard::dealTwo(const std::vector<Card> &cards)
 {
     return nullptr;
 }
-std::shared_ptr<CardGroup> dealThree(const std::vector<Card> &cards)
+std::shared_ptr<CardGroup> SequencesCard::dealThree(const std::vector<Card> &cards)
 {
     return nullptr;
 }
-std::tuple<bool, int32_t> check(const std::vector<Card> &cards)
+std::tuple<bool, int32_t> SequencesCard::check(const std::vector<Card> &cards)
 {
     std::map<int32_t, int32_t> counts;
     for (auto &c : cards)

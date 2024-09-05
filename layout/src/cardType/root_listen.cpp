@@ -1,7 +1,7 @@
 #include "layout/include/cardType/root_listen.h"
-#include "bomb_card.h"
-#include "normal_card.h"
-#include "sequences_card.h"
+#include "layout/include/cardType/bomb_card.h"
+#include "layout/include/cardType/normal_card.h"
+#include "layout/include/cardType/sequences_card.h"
 
 namespace layout
 {

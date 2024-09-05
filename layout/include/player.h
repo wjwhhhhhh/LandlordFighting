@@ -16,6 +16,7 @@ class Player
 
   private:
     bool is_landlord_; // 是否地主
+    bool is_owner;     // 是否是本人
     std::vector<Card> cards_;
 };
 } // namespace layout

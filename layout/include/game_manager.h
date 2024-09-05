@@ -20,7 +20,7 @@ class GameManager
     void sentCard(int index, const std::vector<Card> &cards);
 
   private:
-    std::vector <
+    std::vector<Player> playes_;
 };
 const std::shared_ptr<GameManager> gameManager = GameManager::defaultGameManager();
 }; // namespace layout
