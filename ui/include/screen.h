@@ -2,6 +2,7 @@
 #define SCREEN_H
 
 #include "collab/include/stdc++.h"
+#include "layout/include/game_manager.h"
 #include "layout/include/image_manage.h"
 #include "layout/include/player.h"
 #include <QLabel>
@@ -17,11 +18,10 @@ class screen : public QWidget
     {
         init();
     }
-  private slots:
     void start(bool checked = false);
     bool checkEnd();
     void End();
-    void setPlayers(std::vector<layout::Player> &);
+    void setPlayer(int index, const layout::Player &player);
     void playerSendCards(int32_t id, std::vector<layout::Card>);
 
   private:

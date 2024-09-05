@@ -17,10 +17,13 @@ class GameManager
     }
     void startGame();
     void washCard();
-    void sentCard(int index, const std::vector<Card> &cards);
+    Player getPlayer(int32_t index);
+    void playerSentCard(int index, const std::vector<Card> &cards);
+    void playerGetCard(int index, const std::vector<Card> &cards);
 
   private:
     std::vector<Player> playes_;
+    std::vector<Card> landlordCard;
 };
 const std::shared_ptr<GameManager> gameManager = GameManager::defaultGameManager();
 }; // namespace layout

@@ -44,6 +44,7 @@ class Card
     Card(int32_t point)
     {
         setPoint(point);
+        setShow(false);
     }
     void setPoint(int32_t point)
     {
@@ -77,6 +78,10 @@ class Card
     {
         return a.point_ < b.point_;
     }
+    operator bool()
+    {
+        return is_show_;
+    }
     int32_t getValue() const
     {
         if (point_ >= 52)
@@ -84,8 +89,18 @@ class Card
         return point_ / 4;
     }
 
+    void setShow(bool value)
+    {
+        is_show_ = value;
+    }
+    bool getShow()
+    {
+        return is_show_;
+    }
+
   private:
     int32_t point_;
+    bool is_show_;
 };
 } // namespace layout
 #endif // CARD_H

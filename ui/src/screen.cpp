@@ -38,7 +38,13 @@ void screen::screen::start(bool checked)
     std::cout << "点击开始按键" << std::endl;
 
     start_.setParent(nullptr);
-    // 处理按钮状态或执行操作
+    /// TODO(动画模块(发牌模块))
 }
+
+void start(bool checked = false);
+bool checkEnd();
+void End();
+void setPlayer(int index, const layout::Player &player);
+void playerSendCards(int32_t id, std::vector<layout::Card>);
 
 } // namespace ui
