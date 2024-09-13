@@ -12,7 +12,7 @@ class Player
     void removeCard(std::vector<Card> cards);
     void addCard(std::vector<Card> cards);
     void sort();
-    std::vector<Card> getCards() const;
+    const std::vector<Card> &getCards() const;
 
   private:
     bool is_landlord_; // 是否地主

@@ -8,8 +8,8 @@ namespace layout
 class GameManager
 {
   public:
-    GameManager();
-    ~GameManager();
+    GameManager() = default;
+    ~GameManager() = default;
     static std::shared_ptr<GameManager> defaultGameManager()
     {
         static std::shared_ptr<GameManager> manager = std::make_shared<GameManager>();
@@ -17,7 +17,7 @@ class GameManager
     }
     void startGame();
     void washCard();
-    Player getPlayer(int32_t index);
+    const Player &getPlayer(int32_t index);
     void playerSentCard(int index, const std::vector<Card> &cards);
     void playerGetCard(int index, const std::vector<Card> &cards);
 

@@ -34,7 +34,7 @@ void Player::sort()
 {
     std::sort(cards_.begin(), cards_.end());
 }
-std::vector<Card> Player::getCards() const
+const std::vector<Card> &Player::getCards() const
 {
     return cards_;
 }

@@ -6,6 +6,7 @@ void ImageManage::init()
     loadCard();
     loadPlayer();
     loadBackground();
+    loadPreparation();
 }
 
 void ImageManage::loadCard()
@@ -26,6 +27,14 @@ void ImageManage::loadCard()
 }
 void ImageManage::loadPlayer()
 {
+    player_images_.emplace_back(":res/images/farmer_man_1.png");
+    player_images_.emplace_back(":res/images/farmer_man_2.png");
+    player_images_.emplace_back(":res/images/farmer_woman_1.png");
+    player_images_.emplace_back(":res/images/farmer_woman_2.png");
+    player_images_.emplace_back(":res/images/lord_man_1.png");
+    player_images_.emplace_back(":res/images/lord_man_2.png");
+    player_images_.emplace_back(":res/images/lord_woman_1.png");
+    player_images_.emplace_back(":res/images/lord_woman_2.png");
 }
 void ImageManage::loadBackground()
 {
@@ -43,7 +52,19 @@ const QPixmap &ImageManage::getCardByInt(int32_t id)
 }
 const QPixmap &ImageManage::getCardByCard(const Card &card)
 {
-    return card_images_[card.getPoint()];
+    if (card.getShow())
+        card_images_[card.getPoint()];
+    else
+        return card_images_[54];
+}
+
+const QPixmap &ImageManage::getFarmerAvatar(const int32_t id)
+{
+    return player_images_[id];
+}
+
+void ImageManage::loadPreparation()
+{
 }
 
 } // namespace layout

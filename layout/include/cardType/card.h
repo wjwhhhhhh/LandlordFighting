@@ -41,7 +41,7 @@ class Card
     {
         return static_cast<CardPoint>(val);
     }
-    Card(int32_t point)
+    Card(int32_t point = 54)
     {
         setPoint(point);
         setShow(false);
@@ -93,7 +93,7 @@ class Card
     {
         is_show_ = value;
     }
-    bool getShow()
+    const bool getShow() const
     {
         return is_show_;
     }

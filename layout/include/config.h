@@ -7,8 +7,9 @@ namespace layout
 class Config
 {
   public:
-    std::vector<int32_t> min_with = {0, 0, 2, 3};
-    std::vector<int32_t> min_sequences = {5, 3, 2};
+    const std::vector<int32_t> min_with = {0, 0, 2, 3};
+    const std::vector<int32_t> min_sequences = {5, 3, 2};
+    const int32_t max_cards = 20;
 };
 const Config config;
 

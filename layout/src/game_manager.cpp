@@ -15,12 +15,13 @@ void GameManager::washCard()
     for (int i = 0; i < 3; i++)
     {
         std::vector<Card> card;
-        for (int j = i * 13; j < i * 13 + 13; j++)
+        for (int j = i * 17; j < i * 17 + 17; j++)
         {
             card.emplace_back(cards[j]);
         }
         playerGetCard(i, card);
     }
+    landlordCard.emplace_back(cards[51]);
     landlordCard.emplace_back(cards[52]);
     landlordCard.emplace_back(cards[53]);
 }
@@ -34,7 +35,7 @@ void GameManager::playerGetCard(int index, const std::vector<Card> &cards)
     playes_[index].addCard(cards);
 }
 
-Player GameManager::getPlayer(int32_t index)
+const Player &GameManager::getPlayer(int32_t index)
 {
     return playes_[index];
 }
